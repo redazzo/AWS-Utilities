@@ -25,7 +25,8 @@ import java.text.SimpleDateFormat;
  *     @see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">Authenticating Requests: Using the Authorization Header (AWS Signature Version 4)</a>
  * </p>
  */
-class AWSLambdaAuthorisationHeaderV4 {
+
+public class AWSLambdaAuthorisationHeaderV4 {
 
 
     private String apiKey;
@@ -39,7 +40,7 @@ class AWSLambdaAuthorisationHeaderV4 {
     /**
      * Sets the region for the Lambda call. Defaults to "us-east-1".
      *
-     * @param region
+     * @param region The Amazon AWS region
      */
     public void setRegion(String region) {
         this.region = region;

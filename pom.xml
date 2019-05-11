@@ -37,7 +37,7 @@
     <groupId>nz.redazzo.utility.aws</groupId>
     <artifactId>aws-utility</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
 
     <dependencies>
@@ -87,7 +87,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.0</version>
                 <configuration>
                     <createDependencyReducedPom>true</createDependencyReducedPom>
                     <transformers>
@@ -95,7 +95,7 @@
                                 implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <!-- mainClass>${mainClass}</mainClass-->
+                            <mainClass>nz.redazzo.utility.aws.AWSLambdaAuthorisationHeaderV4</mainClass>
                         </transformer>
                     </transformers>
                     <!-- exclude signed Manifests -->
@@ -140,7 +140,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.3</version>
                 <executions>
@@ -151,7 +151,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin -->
         </plugins>
     </build>
 
@@ -166,10 +166,10 @@
                     <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
                 </configuration>
             </plugin-->
-            <plugin>
+            <!-- plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.3</version>
-            </plugin>
+            </plugin -->
         </plugins>
     </reporting>
 </project>
